@@ -16,9 +16,9 @@
 
             div.transbox {
                 background-color: rgba(255, 255, 255, 0.7); 
-                border: 1px solid rgb(255, 0, 0);
                 padding: 100px;
-                text-align: center; 
+                text-align: center;
+                box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, 0.2);
                 animation: fadeIn 3.5s ease-in-out;
             }
 
@@ -30,20 +30,91 @@
                 opacity: 1;
                     }
             }
+            
             div.transbox p {
+
                 font-weight: 900;
                 font-family: cursive;
-                color: #ff0000;
-                font-size: xx-large; 
-                padding: 10px 350px;
+                color: #b10f06;
+                font-size: larger; 
+                padding: 5px;
+            }
+
+            .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            }
+
+            .dropdown {
+            position: relative;
+            display: inline-block;
+            }
+
+            .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 25px;
+            animation: fadeIn 0.5s ease-in;
+            }
+
+            .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            border-radius: 25px;
+            display: block;
+            }
+
+            .dropdown-content a:hover {background-color: #f1f1f1}
+
+            .dropdown:hover .dropdown-content {
+            display: block;
+            }
+
+            .dropdown:hover .dropbtn {
+            background-color: #ff0000;
+            }
+
+            @keyframes dropDownAnimation {
+                /* Drop down animation*/
+            }
+
+            header {
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: bolder;
+                font-size: larger;
+                text-align: center;
+                margin-top:0%;
+                animation: fadeIn 3.5s ease-in-out;
             }
 
         </style>
             <title>Under Construction</title>
     </head>
     <body>
-        <div class="transbox">
-            <p>The organisation has three employees! More are coming soon!</p>
-        </div>
+        <div>
+            <header>Accounting Page</header>
+            <div class="transbox">
+                <p>The departement has three employees! More are coming soon!</p>
+                <div class="dropdown">
+                    <button class="dropbtn">Other Websites</button>
+                    <div class="dropdown-content">
+                        <a href="HumanResources.html">HR fuckers</a>
+                        <a href="HumanResources.html">Sales</a>
+                        <a href="HumanResources.html">Programmers</a>
+                        <a href="HumanResources.html">Engineers</a>
+                    </div>
+                </div>
+            </div>
+        </div>  
     </body>
 </html>
