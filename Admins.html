@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Under Construction Page for the Organization"
+    />
+    <title>Under Construction</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #4caf50;
+        --secondary-color: #ff0000;
+        --bg-color: rgba(255, 255, 255, 0.85);
+        --text-color: #333;
+        --highlight-color: #0f0;
+        --cursor-color: green;
+        --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        --font-main: "Poppins", sans-serif;
+        --font-code: "Courier Prime", monospace;
+      }
+
+      /* From Uiverse.io by Kemboi-Dun */
+      .container {
+        width: 250px;
+        height: 250px;
+      }
+
+      .terminal_toolbar {
+        display: flex;
+        height: 30px;
+        align-items: center;
+        padding: 0 8px;
+        box-sizing: border-box;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background: #212121;
+        justify-content: space-between;
+      }
+
+      .butt {
+        display: flex;
+        align-items: center;
+      }
+
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin-right: 5px;
+        font-size: 8px;
+        height: 12px;
+        width: 12px;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 100%;
+        background: linear-gradient(#7d7871 0%, #595953 100%);
+        text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 0px 1px 0px #41403a, 0px 1px 1px 0px #474642;
+      }
+
+      .btn-color {
+        background: #ee411a;
+      }
+
+      .btn:hover {
+        cursor: pointer;
+      }
+
+      .btn:focus {
+        outline: none;
+      }
+
+      .butt--exit {
+        background: linear-gradient(#f37458 0%, #de4c12 100%);
+      }
+
+      .add_tab {
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 0 6px;
+        border-radius: 4px 4px 0 0;
+        border-bottom: none;
+        cursor: pointer;
+      }
+
+      .user {
+        color: #d5d0ce;
+        margin-left: 6px;
+        font-size: 14px;
+        line-height: 15px;
+      }
+
+      .terminal_body {
+        background: rgba(0, 0, 0, 0.6);
+        height: calc(100% - 50px);
+        padding-top: 2px;
+        margin-top: -1px;
+        font-size: 12px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      .terminal_promt {
+        display: flex;
+      }
+
+      .terminal_promt span {
+        margin-left: 4px;
+      }
+
+      .terminal_user {
+        color: #1eff8e;
+      }
+
+      .terminal_location {
+        color: #4878c0;
+      }
+
+      .terminal_bling {
+        color: #dddddd;
+      }
+
+      .terminal_cursor {
+        display: block;
+        height: 14px;
+        width: 5px;
+        margin-left: 10px;
+        animation: curbl 1200ms linear infinite;
+      }
+
+      @keyframes curbl {
+        0% {
+          background: #ffffff;
+        }
+
+        49% {
+          background: #ffffff;
+        }
+
+        60% {
+          background: transparent;
+        }
+
+        99% {
+          background: transparent;
+        }
+
+        100% {
+          background: #ffffff;
+        }
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url("./Picture1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: var(--font-main);
+        color: var(--text-color);
+      }
+
+      header {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      .transbox {
+        background-color: var(--bg-color);
+        padding: 2rem;
+        text-align: center;
+        box-shadow: var(--box-shadow);
+        border-radius: 8px;
+        animation: fadeIn 3s ease-in-out;
+      }
+
+      .transbox p {
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        color: var(--secondary-color);
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropbtn {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .dropbtn:hover {
+        background-color: var(--secondary-color);
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        box-shadow: var(--box-shadow);
+        border-radius: 5px;
+        min-width: 200px;
+        z-index: 1;
+        animation: fadeIn 0.5s ease-in;
+      }
+
+      .dropdown-content a {
+        color: var(--text-color);
+        padding: 0.8rem;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.2s ease;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      /*Main button CSS*/
+      .comic-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        background-color: #ff5252;
+        border: 2px solid #000;
+        border-radius: 10px;
+        box-shadow: 5px 5px 0px #000;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .comic-button:hover {
+        background-color: #fff;
+        color: #ff5252;
+        border: 2px solid #ff5252;
+        box-shadow: 5px 5px 0px #ff5252;
+      }
+
+      .comic-button:active {
+        background-color: #fcf414;
+        box-shadow: none;
+        transform: translateY(4px);
+      }
+
+      #main-page-button {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      id="main-page-button"
+      onClick="location.href='MainPage.html'"
+      class="comic-button"
+    >
+      Main Page
+    </button>
+    <header>Organization Dashboard</header>
+    <div class="container">
+      <div class="terminal_toolbar">
+        <div class="butt">
+          <button class="btn btn-color">x</button>
+          <button class="btn">o</button>
+          <button class="btn">-</button>
+        </div>
+        <p class="user">Ashwin@admin: ~</p>
+        <div class="add_tab">+</div>
+      </div>
+      <div class="terminal_body">
+        <div class="terminal_promt">
+          <span class="terminal_user">ashvellau@admin:</span>
+          <span class="terminal_location">~</span>
+          <span class="terminal_bling">$</span>
+          <span class="terminal_cursor"></span>
+        </div>
+      </div>
+    </div>
+    <section class="transbox">
+      <p>The department has three employees! More are coming soon!</p>
+      <div class="dropdown">
+        <button class="dropbtn">Other Departments</button>
+        <div class="dropdown-content">
+          <a href="HumanResources.html">HR</a>
+          <a href="Sales.html">Sales</a>
+          <a href="Programmers.html">Programmers</a>
+          <a href="Engineering.html">Engineers</a>
+          <a href="Admins.html">Admins</a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
