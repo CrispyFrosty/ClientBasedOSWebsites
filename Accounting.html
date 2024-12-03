@@ -1,120 +1,231 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <style>
-            body {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh; 
-                margin: 0; 
-                background-image: url(./Picture1.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-attachment: fixed;
-            }
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Under Construction Page for the Organization"
+    />
+    <title>Under Construction</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #4caf50;
+        --secondary-color: #ff0000;
+        --bg-color: rgba(255, 255, 255, 0.85);
+        --text-color: #333;
+        --highlight-color: #0f0;
+        --cursor-color: green;
+        --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        --font-main: "Poppins", sans-serif;
+        --font-code: "Courier Prime", monospace;
+      }
 
-            div.transbox {
-                background-color: rgba(255, 255, 255, 0.7); 
-                padding: 100px;
-                text-align: center;
-                box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, 0.2);
-                animation: fadeIn 3.5s ease-in-out;
-            }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url("./Picture1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: var(--font-main);
+        color: var(--text-color);
+      }
 
-            @keyframes fadeIn {
-                 0% {
-                 opacity: 0;
-                    }
-                100% {
-                opacity: 1;
-                    }
-            }
-            
-            div.transbox p {
+      header {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        animation: fadeIn 2s ease-in-out;
+      }
 
-                font-weight: 900;
-                font-family: cursive;
-                color: #b10f06;
-                font-size: larger; 
-                padding: 5px;
-            }
+      .terminal-loader {
+        background-color: #1a1a1a;
+        border: 0.1em solid #333;
+        color: var(--highlight-color);
+        font-family: var(--font-code);
+        padding: 1.5rem;
+        width: 12em;
+        margin: 0 auto 2rem;
+        border-radius: 4px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        animation: fadeIn 2s ease-in-out;
+      }
 
-            .dropbtn {
-            background-color: #4CAF50;
-            color: white;
-            padding: 16px;
-            font-size: 16px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            }
+      .terminal-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1.5em;
+        background-color: #333;
+        padding: 0 0.5em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #eee;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      }
 
-            .dropdown {
-            position: relative;
-            display: inline-block;
-            }
+      .control {
+        width: 0.6em;
+        height: 0.6em;
+        margin-left: 0.4em;
+        border-radius: 50%;
+      }
 
-            .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 25px;
-            animation: fadeIn 0.5s ease-in;
-            }
+      .control.close {
+        background-color: #e33;
+      }
 
-            .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            border-radius: 25px;
-            display: block;
-            }
+      .control.minimize {
+        background-color: #ee0;
+      }
 
-            .dropdown-content a:hover {background-color: #f1f1f1}
+      .control.maximize {
+        background-color: #0b0;
+      }
 
-            .dropdown:hover .dropdown-content {
-            display: block;
-            }
+      .text {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 0.15em solid var(--cursor-color);
+        animation: typeAndDelete 4s steps(11) infinite,
+          blinkCursor 0.5s step-end infinite alternate;
+        margin-top: 1.5em;
+      }
 
-            .dropdown:hover .dropbtn {
-            background-color: #ff0000;
-            }
+      @keyframes blinkCursor {
+        50% {
+          border-right-color: transparent;
+        }
+      }
 
-            @keyframes dropDownAnimation {
-                /* Drop down animation*/
-            }
+      @keyframes typeAndDelete {
+        0%,
+        10% {
+          width: 0;
+        }
+        45%,
+        55% {
+          width: 6.2em;
+        }
+        90%,
+        100% {
+          width: 0;
+        }
+      }
 
-            header {
-                font-family: 'Courier New', Courier, monospace;
-                font-weight: bolder;
-                font-size: larger;
-                text-align: center;
-                margin-top:0%;
-                animation: fadeIn 3.5s ease-in-out;
-            }
+      .transbox {
+        background-color: var(--bg-color);
+        padding: 2rem;
+        text-align: center;
+        box-shadow: var(--box-shadow);
+        border-radius: 8px;
+        animation: fadeIn 3s ease-in-out;
+      }
 
-        </style>
-            <title>Under Construction</title>
-    </head>
-    <body>
+      .transbox p {
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        color: var(--secondary-color);
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropbtn {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .dropbtn:hover {
+        background-color: var(--secondary-color);
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        box-shadow: var(--box-shadow);
+        border-radius: 5px;
+        min-width: 200px;
+        z-index: 1;
+        animation: fadeIn 0.5s ease-in;
+      }
+
+      .dropdown-content a {
+        color: var(--text-color);
+        padding: 0.8rem;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.2s ease;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>Organization Dashboard</header>
+    <section class="terminal-loader">
+      <div class="terminal-header">
+        <div>Terminal</div>
         <div>
-            <header>Accounting Page</header>
-            <div class="transbox">
-                <p>The departement has three employees! More are coming soon!</p>
-                <div class="dropdown">
-                    <button class="dropbtn">Other Websites</button>
-                    <div class="dropdown-content">
-                        <a href="HumanResources.html">HR fuckers</a>
-                        <a href="HumanResources.html">Sales</a>
-                        <a href="HumanResources.html">Programmers</a>
-                        <a href="HumanResources.html">Engineers</a>
-                    </div>
-                </div>
-            </div>
-        </div>  
-    </body>
+          <span class="control close"></span>
+          <span class="control minimize"></span>
+          <span class="control maximize"></span>
+        </div>
+      </div>
+      <div class="text">Accounting</div>
+    </section>
+    <section class="transbox">
+      <p>The department has three employees! More are coming soon!</p>
+      <div class="dropdown">
+        <button class="dropbtn">Other Departments</button>
+        <div class="dropdown-content">
+          <a href="HumanResources.html">HR</a>
+          <a href="Sales.html">Sales</a>
+          <a href="Programmers.html">Programmers</a>
+          <a href="Engineers.html">Engineers</a>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>

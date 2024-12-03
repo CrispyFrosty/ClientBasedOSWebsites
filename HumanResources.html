@@ -1,49 +1,74 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <style>
-            body {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh; 
-                margin: 0; 
-                background-image: url(./Picture1.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-attachment: fixed;
-            }
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Under Construction Page for the Organization"
+    />
+    <title>Under Construction</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url("./Picture1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: "Poppins", sans-serif;
+        color: #333;
+      }
 
-            div.transbox {
-                background-color: rgba(255, 255, 255, 0.7); 
-                border: 1px solid rgb(255, 0, 0);
-                padding: 100px;
-                text-align: center; 
-                animation: fadeIn 3.5s ease-in-out;
-            }
+      .transbox {
+        background-color: rgba(255, 255, 255, 0.85);
+        border-radius: 10px;
+        padding: 2rem;
+        text-align: center;
+        max-width: 90%;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 2s ease-in-out;
+      }
 
-            @keyframes fadeIn {
-                 0% {
-                 opacity: 0;
-                    }
-                100% {
-                opacity: 1;
-                    }
-            }
-            div.transbox p {
-                font-weight: 900;
-                font-family: cursive;
-                color: #ff0000;
-                font-size: large; 
-                padding: 5px;
-            }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-        </style>
-    </head>
-    <body>
-        <title>Under Construction</title>
-        <div class="transbox">
-            <p>The organisation has three employees! More are coming soon!</p>
-        </div>
-    </body>
+      .transbox p {
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #e63946;
+        margin: 0;
+      }
+
+      @media (max-width: 768px) {
+        .transbox {
+          padding: 1.5rem;
+        }
+
+        .transbox p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="transbox">
+      <p>The organization has three employees! More are coming soon!</p>
+    </div>
+  </body>
 </html>
